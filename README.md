@@ -1,25 +1,93 @@
-Maddy Mail Server
-=====================
-> Composable all-in-one mail server.
+# Maddy Chatmail Server
+> Optimized all-in-one mail server for instant, secure messaging
 
-Maddy Mail Server implements all functionality required to run a e-mail
-server. It can send messages via SMTP (works as MTA), accept messages via SMTP
-(works as MX) and store messages while providing access to them via IMAP.
-In addition to that it implements auxiliary protocols that are mandatory
-to keep email reasonably secure (DKIM, SPF, DMARC, DANE, MTA-STS).
+This is a specialized fork of [Maddy Mail Server](https://github.com/foxcpp/maddy) optimized specifically for **chatmail** deployments. It provides a single binary solution for running secure, encrypted-only email servers designed for Delta Chat and similar messaging applications.
 
-It replaces Postfix, Dovecot, OpenDKIM, OpenSPF, OpenDMARC and more with one
-daemon with uniform configuration and minimal maintenance cost.
+## What is Chatmail?
 
-**Note:** IMAP storage is "beta". If you are looking for stable and
-feature-packed implementation you may want to use Dovecot instead. maddy still
-can handle message delivery business.
+Chatmail servers are email servers optimized for secure messaging rather than traditional email. They prioritize:
+- **Instant account creation** without personal information
+- **Encryption-only messaging** to ensure privacy
+- **Automatic cleanup** to minimize data retention
+- **Low maintenance** for easy deployment
 
-[![CI status](https://img.shields.io/github/actions/workflow/status/foxcpp/maddy/cicd.yml?style=flat-square)](https://github.com/foxcpp/maddy/actions/workflows/cicd.yml)
-[![Issues tracker](https://img.shields.io/github/issues/foxcpp/maddy?style=flat-square)](https://github.com/foxcpp/maddy)
+## Key Features
 
-* [Setup tutorial](https://maddy.email/tutorials/setting-up/)
-* [Documentation](https://maddy.email/)
+### ✅ Implemented
+- **Passwordless onboarding**: Users can create accounts instantly via QR codes
+- **Encrypted messages only (outbound)**: Prevents sending unencrypted messages to external recipients
+- **Single binary deployment**: Everything needed in one executable
+- **Delta Chat integration**: Native support for Delta Chat account creation
+- **Web interface**: Simple account creation and management interface
 
-* [IRC channel](https://webchat.oftc.net/?channels=maddy&uio=MT11bmRlZmluZWQb1)
-* [Mailing list](https://lists.sr.ht/~foxcpp/maddy)
+### 🚧 Planned Features
+- **Encrypted messages only (inbound)**: Filter incoming unencrypted messages
+- **Automatic message cleanup**: Remove messages unconditionally after N days (currently 20 days)
+- **Stale account cleanup**: Remove inactive addresses after M days without login
+- **Push notifications**: Metadata support for real-time messaging
+- **Enhanced monitoring**: Better observability for chatmail-specific metrics
+
+## Live Example
+
+See a working deployment at: **[inja.bid](https://inja.bid)**
+
+This demonstrates the complete chatmail experience including:
+- Instant account creation via QR code
+- Web interface for account management
+- Full Delta Chat integration
+
+## Configuration Differences from Standard Maddy
+
+This chatmail-optimized version includes:
+
+1. **Simplified Configuration**: Pre-configured for chatmail use cases
+2. **Chatmail Endpoint**: Built-in HTTP/HTTPS endpoints for account creation
+3. **Encryption Enforcement**: Automatic blocking of unencrypted outbound messages
+4. **Account Management**: Streamlined user creation and cleanup processes
+5. **Delta Chat Integration**: Native QR code generation and account provisioning
+
+## Architecture
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Web Interface │    │   SMTP/IMAP      │    │   Delta Chat    │
+│   (QR Codes)    │◄──►│   Mail Server    │◄──►│   Clients       │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+         │                       │                       │
+         └───────────────────────┼───────────────────────┘
+                                 │
+                    ┌──────────────────┐
+                    │   SQLite Storage │
+                    │   (Accounts &    │
+                    │    Messages)     │
+                    └──────────────────┘
+```
+
+## Contributing
+
+This project maintains compatibility with the upstream Maddy project while adding chatmail-specific optimizations. Contributions should:
+
+1. Maintain backward compatibility with standard Maddy configurations
+2. Follow the chatmail specification and best practices
+3. Include tests for new chatmail-specific features
+4. Update documentation for any user-facing changes
+
+## Upstream Compatibility
+
+This fork periodically syncs with the upstream Maddy project to incorporate security updates and improvements. Chatmail-specific features are implemented as optional modules that don't interfere with standard Maddy functionality.
+
+## License
+
+This project inherits the GPL-3.0 license from the upstream Maddy Mail Server project.
+
+## Links
+
+- **Live Demo**: [inja.bid](https://inja.bid)
+- **Upstream Project**: [Maddy Mail Server](https://github.com/foxcpp/maddy)
+- **Delta Chat**: [https://delta.chat](https://delta.chat)
+- **Chatmail Specification**: [Delta Chat Chatmail Docs](https://github.com/deltachat/chatmail)
+- **Documentation**: [Setup Guide](docs/chatmail-setup.md)
+
+---
+
+*For traditional email server needs, consider using the upstream [Maddy Mail Server](https://github.com/foxcpp/maddy) project.*
