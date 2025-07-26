@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>{{.MailDomain}} home</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="/logo.svg">
+    <link rel="mask-icon" href="/logo.svg" color="#000000">
+</head>
+<body>
+
+<ul id="menu">
+    <li><a href="index.html">home</a></li>
+    <li><a href="info.html">info</a></li>
+    <li><a href="privacy.html">privacy</a></li>
+    <li><a href="https://github.com/deltachat/chatmail">public code ↗</a></li>
+    <li id="domain"><a href="index.html">{{.MailDomain}}</a></li>
+</ul>
+
+<p><img class="banner" src="collage-top.png"/></p>
+<h2>Dear <a href="https://get.delta.chat">Delta Chat</a> users and newcomers ...</h2>
+<p>
+Welcome to instant, interoperable and <a href="privacy.html">privacy-preserving</a> messaging :) 
+</p>
+<p><a class="cta-button" href="DCACCOUNT:https://{{.WebDomain}}/new">Get a {{.MailDomain}} chat profile</a></p>
+<p>If you are viewing this page on a different device
+without a Delta Chat app,
+you can also <strong>scan this QR code</strong> with Delta Chat:</p>
+<p><a href="DCACCOUNT:https://{{.WebDomain}}/new">
+    <img width=300 style="float: none;" src="/qr?data=DCACCOUNT%3Ahttps%3A//{{.WebDomain}}/new" /></a></p>
+<p>🐣 <strong>Choose</strong> your Avatar and Name</p>
+<p>💬 <strong>Start</strong> chatting with any Delta Chat contacts using <a href="https://delta.chat/en/help#howtoe2ee">QR invite codes</a></p>
+<p></p>
+<div class="experimental">Note: this is only a temporary development chatmail service</div>
+<p></p>
+
+<style>
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+</style>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>{{.MailDomain}} privacy</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="/logo.svg">
+    <link rel="mask-icon" href="/logo.svg" color="#000000">
+</head>
+<body>
+
+<ul id="menu">
+    <li><a href="index.html">home</a></li>
+    <li><a href="info.html">info</a></li>
+    <li><a href="privacy.html">privacy</a></li>
+    <li><a href="https://github.com/deltachat/chatmail">public code ↗</a></li>
+    <li id="domain"><a href="index.html">{{.MailDomain}}</a></li>
+</ul>
+
+<h1>Privacy Policy for {{.MailDomain}}</h1>
+<p></p>
+<h2>Summary: No personal data asked or collected</h2>
+<p>This chatmail server neither asks for nor retains personal information. 
+Chatmail servers exist to reliably transmit (store and deliver) end-to-end encrypted messages
+between user's devices running the Delta Chat messenger app. 
+Technically, you may think of a Chatmail server as 
+an end-to-end encrypted "messaging router" at Internet-scale. </p>
+<p>A chatmail server is very unlike classic e-mail servers (for example Google Mail servers)
+that ask for personal data and permanently store messages. 
+A chatmail server behaves more like the Signal messaging server 
+but does not know about phone numbers and securely and automatically interoperates 
+with other chatmail and classic e-mail servers. </p>
+<p>Unlike classic e-mail servers, this chatmail server </p>
+<ul>
+<li>
+<p>unconditionally removes messages after 20 days,</p>
+</li>
+<li>
+<p>prohibits sending out un-encrypted messages,</p>
+</li>
+<li>
+<p>does not store Internet addresses ("IP addresses"), </p>
+</li>
+<li>
+<p>does not process IP addresses in relation to email addresses.</p>
+</li>
+</ul>
+<p>Due to the resulting lack of personal data processing
+this chatmail server may not require a privacy policy.</p>
+<p>Nevertheless, we provide legal details below to make life easier
+for data protection specialists and lawyers scrutinizing chatmail operations.</p>
+<h2>1. Name and contact information</h2>
+<p>Responsible for the processing of your personal data is:
+<code></code></p>
+<p>E-mail: </p>
+<p>We have appointed a data protection officer:</p>
+<p><code></code></p>
+<h2>2. Processing when using chat e-mail services</h2>
+<p>We provide services optimized for the use from <a href="https://delta.chat">Delta Chat</a> apps
+and process only the data necessary
+for the setup and technical execution of message delivery.
+The purpose of the processing is that users can
+read, write, manage, delete, send, and receive chat messages.
+For this purpose,
+we operate server-side software
+that enables us to send and receive messages.</p>
+<p>We process the following data and details:</p>
+<ul>
+<li>
+<p>Outgoing and incoming messages (SMTP) are stored for transit
+  on behalf of their users until the message can be delivered.</p>
+</li>
+<li>
+<p>E-Mail-Messages are stored for the recipient and made accessible via IMAP protocols,
+  until explicitly deleted by the user or until a fixed time period is exceeded,
+  (<em>usually 4-8 weeks</em>).</p>
+</li>
+<li>
+<p>IMAP and SMTP protocols are password protected with unique credentials for each account.</p>
+</li>
+<li>
+<p>Users can retrieve or delete all stored messages
+  without intervention from the operators using standard IMAP client tools.</p>
+</li>
+<li>
+<p>Users can connect to a "realtime relay service"
+  to establish Peer-to-Peer connection between user devices,
+  allowing them to send and retrieve ephemeral messages
+  which are never stored on the chatmail server, also not in encrypted form.</p>
+</li>
+</ul>
+<h3>2.1 Account setup</h3>
+<p>Creating an account happens in one of two ways on our mail servers: </p>
+<ul>
+<li>
+<p>with a QR invitation token 
+  which is scanned using the Delta Chat app
+  and then the account is created.</p>
+</li>
+<li>
+<p>  by letting Delta Chat otherwise create an account 
+  and register it with a {{.MailDomain}} mail server. </p>
+</li>
+</ul>
+<p>In either case, we process the newly created email address.
+No phone numbers,
+other email addresses,
+or other identifiable data
+is currently required.
+The legal basis for the processing is
+Art. 6 (1) lit. b GDPR,
+as you have a usage contract with us
+by using our services.</p>
+<h3>2.2 Processing of E-Mail-Messages</h3>
+<p>In addition,
+we will process data
+to keep the server infrastructure operational
+for purposes of e-mail dispatch
+and abuse prevention.</p>
+<ul>
+<li>
+<p>Therefore,
+  it is necessary to process the content and/or metadata
+  (e.g., headers of the email as well as smtp chatter)
+  of E-Mail-Messages in transit. </p>
+</li>
+<li>
+<p>We will keep logs of messages in transit for a limited time.
+  These logs are used to debug delivery problems and software bugs.</p>
+</li>
+</ul>
+<p>In addition,
+we process data to protect the systems from excessive use.
+Therefore, limits are enforced:</p>
+<ul>
+<li>
+<p>rate limits</p>
+</li>
+<li>
+<p>storage limits</p>
+</li>
+<li>
+<p>message size limits</p>
+</li>
+<li>
+<p>any other limit necessary for the whole server to function in a healthy way
+  and to prevent abuse.</p>
+</li>
+</ul>
+<p>The processing and use of the above permissions
+are performed to provide the service.
+The data processing is necessary for the use of our services,
+therefore the legal basis of the processing is
+Art. 6 (1) lit. b GDPR,
+as you have a usage contract with us
+by using our services.
+The legal basis for the data processing
+for the purposes of security and abuse prevention is
+Art. 6 (1) lit. f GDPR.
+Our legitimate interest results
+from the aforementioned purposes.
+We will not use the collected data
+for the purpose of drawing conclusions
+about your person.</p>
+<h2>3. Processing when using our Website</h2>
+<p>When you visit our website,
+the browser used on your end device
+automatically sends information to the server of our website.
+This information is temporarily stored in a so-called log file.
+The following information is collected and stored
+until it is automatically deleted
+(<em>usually 7 days</em>):</p>
+<ul>
+<li>
+<p>used type of browser,</p>
+</li>
+<li>
+<p>used operating system, </p>
+</li>
+<li>
+<p>access date and time as well as</p>
+</li>
+<li>
+<p>country of origin and IP address, </p>
+</li>
+<li>
+<p>the requested file name or HTTP resource,</p>
+</li>
+<li>
+<p>the amount of data transferred,</p>
+</li>
+<li>
+<p>the access status (file transferred, file not found, etc.) and</p>
+</li>
+<li>
+<p>the page from which the file was requested.</p>
+</li>
+</ul>
+<p>This website is hosted by an external service provider (hoster).
+The personal data collected on this website is stored
+on the hoster's servers.
+Our hoster will process your data
+only to the extent necessary to fulfill its obligations
+to perform under our instructions.
+In order to ensure data protection-compliant processing,
+we have concluded a data processing agreement with our hoster.</p>
+<p>The aforementioned data is processed by us for the following purposes:  </p>
+<ul>
+<li>
+<p>Ensuring a reliable connection setup of the website,</p>
+</li>
+<li>
+<p>ensuring a convenient use of our website,</p>
+</li>
+<li>
+<p>checking and ensuring system security and stability, and</p>
+</li>
+<li>
+<p>for other administrative purposes.</p>
+</li>
+</ul>
+<p>The legal basis for the data processing is
+Art. 6 (1) lit. f GDPR.
+Our legitimate interest results
+from the aforementioned purposes of data collection.
+We will not use the collected data
+for the purpose of drawing conclusions about your person.</p>
+<h2>4. Transfer of Data</h2>
+<p>We do not retain any personal data but e-mail messages waiting to be delivered 
+may contain personal data.
+Any such residual personal data will not be transferred to third parties
+for purposes other than those listed below:</p>
+<p>a) you have given your express consent
+in accordance with Art. 6 para. 1 sentence 1 lit. a GDPR,  </p>
+<p>b) the disclosure is necessary for the assertion, exercise or defence of legal claims
+pursuant to Art. 6 (1) sentence 1 lit. f GDPR
+and there is no reason to assume that you have
+an overriding interest worthy of protection
+in the non-disclosure of your data,  </p>
+<p>c) in the event that there is a legal obligation to disclose your data
+pursuant to Art. 6 para. 1 sentence 1 lit. c GDPR,
+as well as  </p>
+<p>d) this is legally permissible and necessary
+in accordance with Art. 6 Para. 1 S. 1 lit. b GDPR
+for the processing of contractual relationships with you,  </p>
+<p>e) this is carried out by a service provider
+acting on our behalf and on our exclusive instructions,
+whom we have carefully selected (Art. 28 (1) GDPR)
+and with whom we have concluded a corresponding contract on commissioned processing (Art. 28 (3) GDPR),
+which obliges our contractor,
+among other things,
+to implement appropriate security measures
+and grants us comprehensive control powers.</p>
+<h2>5. Rights of the data subject</h2>
+<p>The rights arise from Articles 12 to 23 GDPR.
+Since no personal data is stored on our servers,
+even in encrypted form,
+there is no need to provide information
+on these or possible objections.
+A deletion can be made
+directly in the Delta Chat email messenger.</p>
+<p>If you have any questions or complaints, 
+please feel free to contact us by email:<br />
+</p>
+<p>As a rule, you can contact the supervisory authority of your usual place of residence
+or workplace
+or our registered office for this purpose.
+The supervisory authority responsible for our place of business
+is the <code></code>.</p>
+<h2>6. Validity of this privacy policy</h2>
+<p>This data protection declaration is valid
+as of <em>October 2024</em>.
+Due to the further development of our service and offers
+or due to changed legal or official requirements,
+it may become necessary to revise this data protection declaration from time to time.</p>
+
+</body>
+</html>

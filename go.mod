@@ -52,6 +52,7 @@ require (
 	github.com/minio/minio-go/v7 v7.0.84
 	github.com/netauth/netauth v0.6.2
 	github.com/prometheus/client_golang v1.20.5
+	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	github.com/urfave/cli/v2 v2.27.5
 	go.uber.org/zap v1.27.0
 	golang.org/x/crypto v0.32.0

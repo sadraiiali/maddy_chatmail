@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>{{.MailDomain}} info</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="/logo.svg">
+    <link rel="mask-icon" href="/logo.svg" color="#000000">
+</head>
+<body>
+
+<ul id="menu">
+    <li><a href="index.html">home</a></li>
+    <li><a href="info.html">info</a></li>
+    <li><a href="privacy.html">privacy</a></li>
+    <li><a href="https://github.com/deltachat/chatmail">public code ↗</a></li>
+    <li id="domain"><a href="index.html">{{.MailDomain}}</a></li>
+</ul>
+
+<h2>More information</h2>
+<p>{{.MailDomain}} provides a low-maintenance, resource efficient and 
+interoperable e-mail service for everyone. What's behind a <code>chatmail</code> is 
+effectively a normal e-mail address just like any other but optimized 
+for the usage in chats, especially DeltaChat.</p>
+<h3>Rate and storage limits</h3>
+<ul>
+<li>
+<p>Un-encrypted messages are blocked to recipients outside
+  {{.MailDomain}} but setting up contact via <a href="https://delta.chat/en/help#howtoe2ee">QR invite codes</a> 
+  allows your messages to pass freely to any outside recipients.</p>
+</li>
+<li>
+<p>You may send up to 60 messages per minute.</p>
+</li>
+<li>
+<p>You can store up to <a href="https://delta.chat/en/help#what-happens-if-i-turn-on-delete-old-messages-from-server">100M messages on the server</a>.</p>
+</li>
+<li>
+<p>Messages are unconditionally removed latest 20 days after arriving on the server.
+  Earlier, if storage may exceed otherwise.</p>
+</li>
+</ul>
+<h3><a name="account-deletion"></a> Account deletion</h3>
+<p>If you remove a {{.MailDomain}} profile from within the Delta Chat app, 
+then the according account on the server, along with all associated data,
+is automatically deleted 90 days afterwards. </p>
+<p>If you use multiple devices 
+then you need to remove the according chat profile from each device
+in order for all account data to be removed on the server side. </p>
+<p>If you have any further questions or requests regarding account deletion
+please send a message from your account to . </p>
+<h3>Who are the operators? Which software is running?</h3>
+<p>This chatmail provider is run by a small voluntary group of devs and sysadmins,
+who <a href="https://github.com/deltachat/chatmail">publically develop chatmail provider setups</a>.
+Chatmail setups aim to be very low-maintenance, resource efficient and 
+interoperable with any other standards-compliant e-mail service. </p>
+
+</body>
+</html>
