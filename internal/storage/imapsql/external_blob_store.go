@@ -5,7 +5,7 @@ import (
 	"io"
 
 	imapsql "github.com/foxcpp/go-imap-sql"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 type ExtBlob struct {

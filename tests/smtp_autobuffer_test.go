@@ -26,7 +26,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/foxcpp/maddy/tests"
+	"github.com/sadraiiali/maddy_chatmail/tests"
 )
 
 func TestSMTPEndpoint_LargeMessage(tt *testing.T) {

@@ -38,7 +38,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/foxcpp/maddy/tests"
+	"github.com/sadraiiali/maddy_chatmail/tests"
 )
 
 var DovecotExecutable string
@@ -149,7 +149,7 @@ func runDovecot(t *testing.T) (string, *exec.Cmd) {
 
 			// One of messages printed near completing initialization.
 			if strings.Contains(line, "starting up for imap") {
-				time.Sleep(500*time.Millisecond)
+				time.Sleep(500 * time.Millisecond)
 				ready <- struct{}{}
 			}
 

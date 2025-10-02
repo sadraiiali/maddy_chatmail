@@ -27,13 +27,13 @@ import (
 	"time"
 
 	"github.com/foxcpp/go-mtasts"
-	"github.com/foxcpp/maddy/framework/config"
-	"github.com/foxcpp/maddy/framework/dns"
-	"github.com/foxcpp/maddy/framework/exterrors"
-	"github.com/foxcpp/maddy/framework/future"
-	"github.com/foxcpp/maddy/framework/log"
-	"github.com/foxcpp/maddy/framework/module"
-	"github.com/foxcpp/maddy/internal/target"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	"github.com/sadraiiali/maddy_chatmail/framework/dns"
+	"github.com/sadraiiali/maddy_chatmail/framework/exterrors"
+	"github.com/sadraiiali/maddy_chatmail/framework/future"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/internal/target"
 )
 
 type (
@@ -417,7 +417,7 @@ func (c *daneDelivery) discoverTLSA(ctx context.Context, mx string) ([]dns.TLSA,
 		// If A lookup is not DNSSEC-authenticated we assume the server cannot
 		// have TLSA record and skip trying to actually lookup TLSA
 		// to avoid hitting weird errors like SERVFAIL, NOTIMP
-		// e.g. see https://github.com/foxcpp/maddy/issues/287
+		// e.g. see https://github.com/sadraiiali/maddy_chatmail/issues/287
 		if rname == mx {
 			c.c.log.Debugln("skipping DANE for", mx, "due to non-authenticated A records")
 			return nil, nil

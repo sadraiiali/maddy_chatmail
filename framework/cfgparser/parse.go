@@ -26,7 +26,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/foxcpp/maddy/framework/config/lexer"
+	"github.com/sadraiiali/maddy_chatmail/framework/config/lexer"
 )
 
 // Node struct describes a parsed configurtion block or a simple directive.

@@ -25,7 +25,7 @@ import (
 
 	"github.com/emersion/go-message/textproto"
 	"github.com/emersion/go-smtp"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 func init() {

@@ -7,11 +7,11 @@ import (
 	"path/filepath"
 
 	"github.com/caddyserver/certmagic"
-	"github.com/foxcpp/maddy/framework/config"
-	modconfig "github.com/foxcpp/maddy/framework/config/module"
-	"github.com/foxcpp/maddy/framework/hooks"
-	"github.com/foxcpp/maddy/framework/log"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	modconfig "github.com/sadraiiali/maddy_chatmail/framework/config/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/hooks"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 const modName = "tls.loader.acme"

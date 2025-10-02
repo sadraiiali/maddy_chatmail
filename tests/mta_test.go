@@ -27,8 +27,8 @@ import (
 	"testing"
 
 	"github.com/foxcpp/go-mockdns"
-	"github.com/foxcpp/maddy/internal/testutils"
-	"github.com/foxcpp/maddy/tests"
+	"github.com/sadraiiali/maddy_chatmail/internal/testutils"
+	"github.com/sadraiiali/maddy_chatmail/tests"
 )
 
 func TestMTA_Outbound(tt *testing.T) {

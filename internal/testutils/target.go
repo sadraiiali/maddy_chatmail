@@ -30,10 +30,10 @@ import (
 
 	"github.com/emersion/go-message/textproto"
 	"github.com/emersion/go-smtp"
-	"github.com/foxcpp/maddy/framework/buffer"
-	"github.com/foxcpp/maddy/framework/config"
-	"github.com/foxcpp/maddy/framework/exterrors"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/buffer"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	"github.com/sadraiiali/maddy_chatmail/framework/exterrors"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 type Msg struct {

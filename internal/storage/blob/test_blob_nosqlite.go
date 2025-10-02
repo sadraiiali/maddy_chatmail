@@ -6,7 +6,7 @@ package blob
 import (
 	"testing"
 
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 func TestStore(t *testing.T, newStore func() module.BlobStore, cleanStore func(module.BlobStore)) {

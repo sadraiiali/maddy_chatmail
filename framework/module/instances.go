@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/foxcpp/maddy/framework/config"
-	"github.com/foxcpp/maddy/framework/hooks"
-	"github.com/foxcpp/maddy/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	"github.com/sadraiiali/maddy_chatmail/framework/hooks"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
 )
 
 var (

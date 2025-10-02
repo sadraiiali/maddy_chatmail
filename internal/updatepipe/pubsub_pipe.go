@@ -7,8 +7,8 @@ import (
 	"strconv"
 
 	mess "github.com/foxcpp/go-imap-mess"
-	"github.com/foxcpp/maddy/framework/log"
-	"github.com/foxcpp/maddy/internal/updatepipe/pubsub"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/internal/updatepipe/pubsub"
 )
 
 type PubSubPipe struct {

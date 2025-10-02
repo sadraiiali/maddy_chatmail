@@ -24,9 +24,9 @@ import (
 	"os"
 
 	"github.com/emersion/go-imap"
-	"github.com/foxcpp/maddy/framework/module"
-	maddycli "github.com/foxcpp/maddy/internal/cli"
-	clitools2 "github.com/foxcpp/maddy/internal/cli/clitools"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
+	maddycli "github.com/sadraiiali/maddy_chatmail/internal/cli"
+	clitools2 "github.com/sadraiiali/maddy_chatmail/internal/cli/clitools"
 	"github.com/urfave/cli/v2"
 )
 

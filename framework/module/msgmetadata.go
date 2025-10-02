@@ -26,7 +26,7 @@ import (
 	"net"
 
 	"github.com/emersion/go-smtp"
-	"github.com/foxcpp/maddy/framework/future"
+	"github.com/sadraiiali/maddy_chatmail/framework/future"
 )
 
 // ConnState structure holds the state information of the protocol used to

@@ -30,11 +30,11 @@ import (
 	"context"
 
 	"github.com/emersion/go-message/textproto"
-	"github.com/foxcpp/maddy/framework/buffer"
-	"github.com/foxcpp/maddy/framework/config"
-	"github.com/foxcpp/maddy/framework/log"
-	"github.com/foxcpp/maddy/framework/module"
-	"github.com/foxcpp/maddy/internal/target"
+	"github.com/sadraiiali/maddy_chatmail/framework/buffer"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/internal/target"
 )
 
 const modName = "check_things"

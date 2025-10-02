@@ -21,7 +21,7 @@ package module
 import (
 	"sync"
 
-	"github.com/foxcpp/maddy/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
 )
 
 var (

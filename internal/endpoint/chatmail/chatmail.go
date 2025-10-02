@@ -31,11 +31,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/foxcpp/maddy/framework/config"
-	tls2 "github.com/foxcpp/maddy/framework/config/tls"
-	"github.com/foxcpp/maddy/framework/log"
-	"github.com/foxcpp/maddy/framework/module"
-	"github.com/foxcpp/maddy/internal/auth/pass_table"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	tls2 "github.com/sadraiiali/maddy_chatmail/framework/config/tls"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/internal/auth/pass_table"
 	"github.com/skip2/go-qrcode"
 	"golang.org/x/crypto/bcrypt"
 )

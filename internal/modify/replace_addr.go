@@ -24,11 +24,11 @@ import (
 	"strings"
 
 	"github.com/emersion/go-message/textproto"
-	"github.com/foxcpp/maddy/framework/address"
-	"github.com/foxcpp/maddy/framework/buffer"
-	"github.com/foxcpp/maddy/framework/config"
-	modconfig "github.com/foxcpp/maddy/framework/config/module"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/address"
+	"github.com/sadraiiali/maddy_chatmail/framework/buffer"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	modconfig "github.com/sadraiiali/maddy_chatmail/framework/config/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 // replaceAddr is a simple module that replaces matching sender (or recipient) address

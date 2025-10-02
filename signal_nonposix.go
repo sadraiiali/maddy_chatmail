@@ -26,7 +26,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/foxcpp/maddy/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
 )
 
 func handleSignals() os.Signal {

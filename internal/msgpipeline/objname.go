@@ -21,7 +21,7 @@ package msgpipeline
 import (
 	"fmt"
 
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 // objectName returns a new that is usable to identify the used external

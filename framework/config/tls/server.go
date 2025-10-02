@@ -21,10 +21,10 @@ package tls
 import (
 	"crypto/tls"
 
-	"github.com/foxcpp/maddy/framework/config"
-	modconfig "github.com/foxcpp/maddy/framework/config/module"
-	"github.com/foxcpp/maddy/framework/log"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	modconfig "github.com/sadraiiali/maddy_chatmail/framework/config/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 type TLSConfig struct {
@@ -70,7 +70,7 @@ func TLSDirective(m *config.Map, node config.Node) (interface{}, error) {
 
 func readTLSBlock(globals map[string]interface{}, blockNode config.Node) (*TLSConfig, error) {
 	baseCfg := tls.Config{
-		// Workaround for issue https://github.com/foxcpp/maddy/issues/730
+		// Workaround for issue https://github.com/sadraiiali/maddy_chatmail/issues/730
 		SessionTicketsDisabled: true,
 	}
 

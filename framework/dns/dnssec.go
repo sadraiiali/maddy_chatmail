@@ -25,8 +25,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/foxcpp/maddy/framework/log"
 	"github.com/miekg/dns"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
 )
 
 type TLSA = dns.TLSA

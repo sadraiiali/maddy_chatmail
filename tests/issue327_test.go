@@ -26,8 +26,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/foxcpp/maddy/internal/testutils"
-	"github.com/foxcpp/maddy/tests"
+	"github.com/sadraiiali/maddy_chatmail/internal/testutils"
+	"github.com/sadraiiali/maddy_chatmail/tests"
 )
 
 func TestIssue327(tt *testing.T) {

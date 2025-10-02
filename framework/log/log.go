@@ -26,7 +26,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/foxcpp/maddy/framework/exterrors"
+	"github.com/sadraiiali/maddy_chatmail/framework/exterrors"
 	"go.uber.org/zap"
 )
 

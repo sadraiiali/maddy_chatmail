@@ -28,8 +28,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	maddycli "github.com/foxcpp/maddy/internal/cli"
-	clitools2 "github.com/foxcpp/maddy/internal/cli/clitools"
+	maddycli "github.com/sadraiiali/maddy_chatmail/internal/cli"
+	clitools2 "github.com/sadraiiali/maddy_chatmail/internal/cli/clitools"
 	"github.com/urfave/cli/v2"
 )
 

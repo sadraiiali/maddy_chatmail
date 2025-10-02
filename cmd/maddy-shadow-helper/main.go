@@ -24,7 +24,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/foxcpp/maddy/internal/auth/shadow"
+	"github.com/sadraiiali/maddy_chatmail/internal/auth/shadow"
 )
 
 func main() {

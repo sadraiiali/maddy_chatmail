@@ -29,12 +29,12 @@ import (
 	"strings"
 
 	"github.com/emersion/go-message/textproto"
-	"github.com/foxcpp/maddy/framework/buffer"
-	"github.com/foxcpp/maddy/framework/config"
-	"github.com/foxcpp/maddy/framework/exterrors"
-	"github.com/foxcpp/maddy/framework/log"
-	"github.com/foxcpp/maddy/framework/module"
-	"github.com/foxcpp/maddy/internal/target"
+	"github.com/sadraiiali/maddy_chatmail/framework/buffer"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	"github.com/sadraiiali/maddy_chatmail/framework/exterrors"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/internal/target"
 )
 
 const modName = "check.pgp_encryption"
@@ -527,27 +527,6 @@ func (s *state) isSecureJoinMessagePermissive(secureJoinHeader, contentType stri
 	return false
 }
 
-// Check if this is a Delta Chat initialization message
-func (s *state) isDeltaChatInitMessage() bool {
-	// Check for Delta Chat specific subjects or headers
-	if s.subject != "" {
-		lowerSubject := strings.ToLower(s.subject)
-		// Common Delta Chat initialization patterns
-		if strings.Contains(lowerSubject, "chat:") ||
-			strings.Contains(lowerSubject, "delta") ||
-			strings.Contains(lowerSubject, "message from") ||
-			strings.Contains(lowerSubject, "contact request") ||
-			lowerSubject == "..." { // Delta Chat often uses "..." as initial subject
-			return true
-		}
-	}
-
-	// Check for Chat-* headers which indicate Delta Chat messages
-	// We'll check this during CheckBody when we have access to the header
-	// For now just return false, the logic will be moved to CheckBody
-	return false
-}
-
 // Check if this is a Delta Chat initialization message with access to headers
 func (s *state) isDeltaChatInitMessageWithHeader(header textproto.Header) bool {
 	// Check for Delta Chat specific subjects or headers
@@ -575,12 +554,6 @@ func (s *state) isDeltaChatInitMessageWithHeader(header textproto.Header) bool {
 }
 
 // Check if the message has Autocrypt headers (used for key exchange)
-func (s *state) hasAutocryptHeader() bool {
-	// We'll check this during CheckBody when we have access to the header
-	// For now just return false, the logic will be moved to CheckBody
-	return false
-}
-
 // Check if the message has Autocrypt headers with access to headers
 func (s *state) hasAutocryptHeaderWithHeader(header textproto.Header) bool {
 	for field := header.Fields(); field.Next(); {

@@ -21,8 +21,8 @@ package smtp_downstream
 import (
 	"testing"
 
-	"github.com/foxcpp/maddy/framework/config"
-	"github.com/foxcpp/maddy/internal/testutils"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	"github.com/sadraiiali/maddy_chatmail/internal/testutils"
 )
 
 func TestDownstreamDelivery_EHLO_ALabel(t *testing.T) {

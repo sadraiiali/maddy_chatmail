@@ -1,8 +1,8 @@
 package libdns
 
 import (
-	"github.com/foxcpp/maddy/framework/config"
 	"github.com/libdns/libdns"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
 )
 
 type ProviderModule struct {

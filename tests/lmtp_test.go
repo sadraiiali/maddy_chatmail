@@ -26,8 +26,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/foxcpp/maddy/internal/testutils"
-	"github.com/foxcpp/maddy/tests"
+	"github.com/sadraiiali/maddy_chatmail/internal/testutils"
+	"github.com/sadraiiali/maddy_chatmail/tests"
 )
 
 func TestLMTPServer_Is_Actually_LMTP(tt *testing.T) {

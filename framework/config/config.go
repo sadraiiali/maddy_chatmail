@@ -21,7 +21,7 @@ package config
 import (
 	"fmt"
 
-	parser "github.com/foxcpp/maddy/framework/cfgparser"
+	parser "github.com/sadraiiali/maddy_chatmail/framework/cfgparser"
 )
 
 type (

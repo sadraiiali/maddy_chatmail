@@ -24,9 +24,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/foxcpp/maddy/framework/config"
-	"github.com/foxcpp/maddy/framework/module"
 	_ "github.com/lib/pq"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 type SQL struct {

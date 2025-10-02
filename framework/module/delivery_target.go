@@ -23,7 +23,7 @@ import (
 
 	"github.com/emersion/go-message/textproto"
 	"github.com/emersion/go-smtp"
-	"github.com/foxcpp/maddy/framework/buffer"
+	"github.com/sadraiiali/maddy_chatmail/framework/buffer"
 )
 
 // DeliveryTarget interface represents abstract storage for the message data

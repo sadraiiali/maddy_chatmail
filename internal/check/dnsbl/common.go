@@ -24,8 +24,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/foxcpp/maddy/framework/dns"
-	"github.com/foxcpp/maddy/framework/exterrors"
+	"github.com/sadraiiali/maddy_chatmail/framework/dns"
+	"github.com/sadraiiali/maddy_chatmail/framework/exterrors"
 )
 
 type ListedErr struct {

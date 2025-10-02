@@ -25,7 +25,7 @@ import (
 	"testing"
 
 	"github.com/foxcpp/go-mockdns"
-	"github.com/foxcpp/maddy/internal/testutils"
+	"github.com/sadraiiali/maddy_chatmail/internal/testutils"
 )
 
 func TestCheckList(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/foxcpp/maddy/framework/address"
+	"github.com/sadraiiali/maddy_chatmail/framework/address"
 )
 
 func TestValidMailboxName(t *testing.T) {
@@ -23,8 +23,8 @@ func TestValidDomain(t *testing.T) {
 		{Domain: "maddy.email.", Valid: true},
 		{Domain: "..", Valid: false},
 		{Domain: strings.Repeat("a", 256), Valid: false},
-		{Domain: "äõäoaõoäaõaäõaoäaoaäõoaäooaoaoiuaiauäõiuüõaõäiauõaaa.tld", Valid: true},            // https://github.com/foxcpp/maddy/issues/554
-		{Domain: "xn--oaoaaaoaoaoaooaoaoiuaiauiuaiauaaa-f1cadccdcmd01eddchqcbe07a.tld", Valid: true}, // https://github.com/foxcpp/maddy/issues/554
+		{Domain: "äõäoaõoäaõaäõaoäaoaäõoaäooaoaoiuaiauäõiuüõaõäiauõaaa.tld", Valid: true},            // https://github.com/sadraiiali/maddy_chatmail/issues/554
+		{Domain: "xn--oaoaaaoaoaoaooaoaoiuaiauiuaiauaaa-f1cadccdcmd01eddchqcbe07a.tld", Valid: true}, // https://github.com/sadraiiali/maddy_chatmail/issues/554
 	} {
 		if actual := address.ValidDomain(c.Domain); actual != c.Valid {
 			t.Errorf("expected domain %v to be valid=%v, but got %v", c.Domain, c.Valid, actual)

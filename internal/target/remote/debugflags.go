@@ -22,7 +22,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 package remote
 
 import (
-	maddycli "github.com/foxcpp/maddy/internal/cli"
+	maddycli "github.com/sadraiiali/maddy_chatmail/internal/cli"
 	"github.com/urfave/cli/v2"
 )
 

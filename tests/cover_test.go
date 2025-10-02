@@ -42,10 +42,10 @@ import (
 	"os"
 	"testing"
 
-	_ "github.com/foxcpp/maddy"                  // To register run command
-	_ "github.com/foxcpp/maddy/internal/cli/ctl" // To register other CLI commands.
+	_ "github.com/sadraiiali/maddy_chatmail"                  // To register run command
+	_ "github.com/sadraiiali/maddy_chatmail/internal/cli/ctl" // To register other CLI commands.
 
-	maddycli "github.com/foxcpp/maddy/internal/cli"
+	maddycli "github.com/sadraiiali/maddy_chatmail/internal/cli"
 )
 
 func TestMain(m *testing.M) {

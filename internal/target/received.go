@@ -25,9 +25,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/foxcpp/maddy/framework/address"
-	"github.com/foxcpp/maddy/framework/dns"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/address"
+	"github.com/sadraiiali/maddy_chatmail/framework/dns"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 func SanitizeForHeader(raw string) string {

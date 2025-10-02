@@ -24,7 +24,7 @@ package tests_test
 import (
 	"testing"
 
-	"github.com/foxcpp/maddy/tests"
+	"github.com/sadraiiali/maddy_chatmail/tests"
 )
 
 func TestConcurrencyLimit(tt *testing.T) {

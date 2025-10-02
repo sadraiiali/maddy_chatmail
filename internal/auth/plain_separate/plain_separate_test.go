@@ -24,7 +24,7 @@ import (
 	"testing"
 
 	"github.com/emersion/go-sasl"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 type mockAuth struct {

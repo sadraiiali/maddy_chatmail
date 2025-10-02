@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/foxcpp/maddy/framework/address"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/address"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 func AuthorizeEmailUse(ctx context.Context, username string, addrs []string, mapping module.Table) (bool, error) {

@@ -3,7 +3,7 @@ package authz
 import (
 	"strings"
 
-	"github.com/foxcpp/maddy/framework/address"
+	"github.com/sadraiiali/maddy_chatmail/framework/address"
 	"golang.org/x/text/secure/precis"
 )
 

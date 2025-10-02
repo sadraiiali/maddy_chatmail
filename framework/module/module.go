@@ -34,7 +34,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 package module
 
 import (
-	"github.com/foxcpp/maddy/framework/config"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
 )
 
 // Module is the interface implemented by all maddy module instances.

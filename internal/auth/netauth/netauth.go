@@ -4,11 +4,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/foxcpp/maddy/framework/config"
-	"github.com/foxcpp/maddy/framework/log"
-	"github.com/foxcpp/maddy/framework/module"
 	"github.com/hashicorp/go-hclog"
 	"github.com/netauth/netauth/pkg/netauth"
+	"github.com/sadraiiali/maddy_chatmail/framework/config"
+	"github.com/sadraiiali/maddy_chatmail/framework/log"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 )
 
 const modName = "auth.netauth"

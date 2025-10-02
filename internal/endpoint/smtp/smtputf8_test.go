@@ -24,9 +24,9 @@ import (
 
 	"github.com/emersion/go-smtp"
 	"github.com/foxcpp/go-mockdns"
-	"github.com/foxcpp/maddy/framework/exterrors"
-	"github.com/foxcpp/maddy/framework/module"
-	"github.com/foxcpp/maddy/internal/testutils"
+	"github.com/sadraiiali/maddy_chatmail/framework/exterrors"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/internal/testutils"
 )
 
 func TestSMTPUTF8_MangleStatusMessage(t *testing.T) {

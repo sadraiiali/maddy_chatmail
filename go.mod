@@ -25,6 +25,7 @@ require (
 	github.com/foxcpp/go-imap-sql v0.5.1-0.20250124140007-8da5567429d5
 	github.com/foxcpp/go-mockdns v1.1.0
 	github.com/foxcpp/go-mtasts v0.0.0-20240130093538-1438da2e5932
+	github.com/foxcpp/maddy v0.0.0-00010101000000-000000000000
 	github.com/go-ldap/ldap/v3 v3.4.10
 	github.com/go-sql-driver/mysql v1.8.1
 	github.com/google/uuid v1.6.0
@@ -69,7 +70,6 @@ require (
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/Azure/go-ntlmssp v0.0.0-20221128193559-754e69321358 // indirect
 	github.com/G-Core/gcore-dns-sdk-go v0.2.9 // indirect
-	github.com/aws/aws-sdk-go v1.44.40 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.33.0 // indirect
 	github.com/aws/aws-sdk-go-v2/config v1.29.1 // indirect
 	github.com/aws/aws-sdk-go-v2/credentials v1.17.54 // indirect
@@ -166,6 +166,8 @@ require (
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.8.2 // indirect
 )
+
+replace github.com/foxcpp/maddy => ./
 
 replace github.com/emersion/go-imap => github.com/foxcpp/go-imap v1.0.0-beta.1.0.20220623182312-df940c324887
 

@@ -30,7 +30,7 @@ import (
 	"testing"
 
 	"github.com/foxcpp/go-mockdns"
-	"github.com/foxcpp/maddy/tests"
+	"github.com/sadraiiali/maddy_chatmail/tests"
 )
 
 func TestCheckRequireTLS(tt *testing.T) {

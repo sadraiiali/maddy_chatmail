@@ -23,8 +23,8 @@ import (
 	"crypto/x509"
 	"time"
 
-	"github.com/foxcpp/maddy/framework/dns"
-	"github.com/foxcpp/maddy/framework/exterrors"
+	"github.com/sadraiiali/maddy_chatmail/framework/dns"
+	"github.com/sadraiiali/maddy_chatmail/framework/exterrors"
 )
 
 // Used to override verification time for DANE-TA tests.

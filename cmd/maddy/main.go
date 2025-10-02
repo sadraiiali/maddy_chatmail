@@ -19,9 +19,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 package main
 
 import (
-	_ "github.com/foxcpp/maddy"
-	maddycli "github.com/foxcpp/maddy/internal/cli"
-	_ "github.com/foxcpp/maddy/internal/cli/ctl"
+	_ "github.com/sadraiiali/maddy_chatmail"
+	maddycli "github.com/sadraiiali/maddy_chatmail/internal/cli"
+	_ "github.com/sadraiiali/maddy_chatmail/internal/cli/ctl"
 )
 
 func main() {

@@ -22,7 +22,7 @@ import (
 	"fmt"
 
 	imapbackend "github.com/emersion/go-imap/backend"
-	"github.com/foxcpp/maddy/framework/module"
+	"github.com/sadraiiali/maddy_chatmail/framework/module"
 	"github.com/urfave/cli/v2"
 )
 
