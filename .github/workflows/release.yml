@@ -91,7 +91,7 @@ jobs:
           EOF
           # Build the image, create a temporary container and copy the artifact.
           docker build -t maddy-builder .
-          container_id=$(docker.create maddy-builder)
+          container_id=$(docker create maddy-builder)
           docker cp $container_id:/maddy-aarch64-linux-musl.tar.zst .
           docker rm $container_id
       - name: Upload binary tree
