@@ -64,6 +64,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       # Building in a Docker container is a workaround for the issue of
       # JavaScript-based GitHub Actions not being supported in Alpine
       # containers on the Arm64 platform. Otherwise, we could completely reuse
@@ -85,7 +91,7 @@ jobs:
           EOF
           # Build the image, create a temporary container and copy the artifact.
           docker build -t maddy-builder .
-          container_id=$(docker create maddy-builder)
+          container_id=$(docker.create maddy-builder)
           docker cp $container_id:/maddy-aarch64-linux-musl.tar.zst .
           docker rm $container_id
       - name: Upload binary tree
@@ -112,12 +118,6 @@ jobs:
       - name: "Set up Docker Buildx"
         id: buildx
         uses: docker/setup-buildx-action@v3
-      - name: "Login to Docker Hub"
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          logout: false
       - name: "Login to GitHub Container Registry"
         uses: docker/login-action@v3
         with:
@@ -130,15 +130,14 @@ jobs:
         id: meta
         with:
           images: |
-            foxcpp/maddy
-            ghcr.io/foxcpp/maddy
+            ghcr.io/sadraiiali/maddy_chatmail
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
           labels: |
-            org.opencontainers.image.title=Maddy Mail Server
-            org.opencontainers.image.documentation=https://maddy.email/docker/
-            org.opencontainers.image.url=https://maddy.email
+            org.opencontainers.image.title=Maddy Chatmail Server
+            org.opencontainers.image.documentation=https://github.com/sadraiiali/maddy_chatmail
+            org.opencontainers.image.url=https://github.com/sadraiiali/maddy_chatmail
       - name: "Build and push"
         uses: docker/build-push-action@v6
         id: docker
@@ -152,7 +151,7 @@ jobs:
       - name: "Generate container attestation"
         uses: actions/attest-build-provenance@v2
         with:
-          subject-name: ghcr.io/foxcpp/maddy
+          subject-name: ghcr.io/sadraiiali/maddy_chatmail
           subject-digest: ${{ steps.docker.outputs.digest }}
           push-to-registry: true
 
