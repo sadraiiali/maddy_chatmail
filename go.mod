@@ -1,4 +1,4 @@
-module github.com/foxcpp/maddy
+module github.com/sadraiiali/maddy_chatmail
 
 go 1.23.1
 
