@@ -1,0 +1,52 @@
+version: 2
+project_name: maddy
+
+builds:
+  - id: maddy
+    main: ./cmd/maddy
+    binary: maddy
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s
+      - -w
+      # support embedding version for both the upstream package path and this fork's module path
+      - -X "github.com/foxcpp/maddy.Version={{.Version}}"
+      - -X "github.com/sadraiiali/maddy_chatmail.Version={{.Version}}"
+    # Some targets (like static linux builds) may require special tags; leave tags optional
+    tags: "osusergo netgo"
+
+archives:
+  - id: default
+    files:
+      - maddy.conf
+      - README.md
+      - LICENSE
+    format_overrides:
+      - goos: windows
+        formats:
+          - zip
+
+checksum:
+  name_template: "checksums.txt"
+
+snapshot: {}
+
+release:
+  github:
+    owner: sadraiiali
+    name: maddy_chatmail
+  # make a release on tag push
+  draft: false
+  prerelease: auto
+
+changelog:
+  use: git
+

@@ -118,6 +118,17 @@ Caddy will automatically obtain SSL certificates for your domain and proxy reque
 
 For detailed setup instructions including manual installation, TLS certificates, and DNS configuration, see the [Setup Guide](docs/chatmail-setup.md).
 
+## Releases & Downloads
+
+Pre-built release artifacts for common platforms are published on the repository's GitHub Releases page. Each release includes signed archives for the following targets (when available):
+- linux (amd64, arm64)
+- macOS (amd64, arm64)
+- windows (amd64, arm64)
+
+To download the latest release, visit: https://github.com/sadraiiali/maddy_chatmail/releases and pick the artifact matching your OS/architecture. Artifacts are packaged as tar.gz (Linux/macOS) or zip (Windows) and include a `maddy` binary and the default `maddy.conf`.
+
+If you prefer to build locally, see the "Building from source" tutorial in the docs (it also documents how to use the releases and how to embed version information): docs/tutorials/building-from-source.md
+
 ## Configuration Differences from Standard Maddy
 
 This chatmail-optimized version includes:

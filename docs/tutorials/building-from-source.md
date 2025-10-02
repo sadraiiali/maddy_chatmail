@@ -33,22 +33,42 @@ export PATH="$PWD/go/bin:$PATH"
 
 1. Clone repository
 ```
-$ git clone https://github.com/foxcpp/maddy.git
-$ cd maddy
+# clone this fork (or the upstream maddy if you prefer)
+$ git clone https://github.com/sadraiiali/maddy_chatmail.git
+$ cd maddy_chatmail
 ```
 
-2. Select the appropriate version to build:
+2. Select the appropriate version to build or use a pre-built release:
+
+Pre-built release artifacts are published to the GitHub Releases page for this repository. Downloads include platform-specific archives (tar.gz or zip) containing the `maddy` binary and default config files. Visit:
+
+https://github.com/sadraiiali/maddy_chatmail/releases
+
+You can also build locally from a tag or branch:
 ```
-$ git checkout v0.8.0      # a specific release
+$ git checkout v0.8.3      # a specific release (example)
 $ git checkout master      # next bugfix release
 $ git checkout dev         # next feature release
 ```
 
 3. Build & install it
+
+Using the provided build script (this follows the original upstream workflow):
 ```
 $ ./build.sh
 $ sudo ./build.sh install
 ```
+
+Using GoReleaser locally (convenient for testing and for producing the same artifacts as CI):
+
+Prerequisites: `goreleaser` installed locally. Then run in snapshot mode (does not publish to GitHub):
+
+```
+# build snapshot artifacts locally (no GitHub release)
+goreleaser build --snapshot --clean
+```
+
+To create an actual GitHub Release with artifacts, push a semver tag like `v0.8.3` — the repository's GitHub Actions workflow will run GoReleaser and publish artifacts automatically.
 
 4. Finish setup as described in [Setting up](../setting-up) (starting from System configuration).
 
