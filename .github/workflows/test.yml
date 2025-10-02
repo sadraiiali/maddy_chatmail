@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+      - name: Clean Go mod cache
+        run: rm -rf $HOME/go/pkg/mod
       - uses: actions/setup-go@v5
         with:
           go-version-file: 'go.mod'
@@ -51,6 +53,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: Clean Go mod cache
+      run: rm -rf $HOME/go/pkg/mod
     - uses: actions/setup-go@v5
       with:
         go-version-file: 'go.mod'

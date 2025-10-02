@@ -29,7 +29,7 @@ archives:
     files:
       - maddy.conf
       - README.md
-      - LICENSE
+      - COPYING
     format_overrides:
       - goos: windows
         formats:

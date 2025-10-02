@@ -1,22 +1,16 @@
+issues:
+  exclude-rules:
+    - path: _test.go
+      linters:
+        - gofmt
+
 run:
   timeout: 5m
 
 linters:
   enable:
     - govet
-    run:
-      timeout: 5m
-
-    linters:
-      enable:
-        - govet
-        - staticcheck
-        - errcheck
-        - gofmt
-        - ineffassign
-
-    issues:
-      exclude-rules:
-        - path: _test.go
-          linters:
-            - gofmt
+    - staticcheck
+    - errcheck
+    - gofmt
+    - ineffassign
