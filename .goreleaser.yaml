@@ -34,6 +34,9 @@ archives:
       - goos: windows
         formats:
           - zip
+  - id: binaries
+    format: binary
+    name_template: "{{ .Binary }}-{{ .Os }}-{{ .Arch }}"
 
 checksum:
   name_template: "checksums.txt"
@@ -47,7 +50,15 @@ release:
   # make a release on tag push
   draft: false
   prerelease: auto
+  header: |
+    ## Release Summary
 
+    This release includes the latest changes and binaries for Maddy Chatmail Server.
 changelog:
   use: git
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
 
