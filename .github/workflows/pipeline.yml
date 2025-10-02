@@ -3,6 +3,7 @@ name: "CI Release Pipeline"
 on:
   push:
     tags: [ 'v*' ]
+    branches: [ master, dev ]
 
 
 permissions:
