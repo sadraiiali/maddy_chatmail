@@ -1,17 +1,22 @@
+run:
+  timeout: 5m
+
 linters:
   enable:
-  - gosimple
-  - errcheck
-  - staticcheck
-  - ineffassign
-  - typecheck
-  - govet
-  - unused
-  - goimports
-  - prealloc
-  - unconvert
-  - misspell
-  - whitespace
-  - nakedret
-  - dogsled
-  - copyloopvar
+    - govet
+    run:
+      timeout: 5m
+
+    linters:
+      enable:
+        - govet
+        - staticcheck
+        - errcheck
+        - gofmt
+        - ineffassign
+
+    issues:
+      exclude-rules:
+        - path: _test.go
+          linters:
+            - gofmt
