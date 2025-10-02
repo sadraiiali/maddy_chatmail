@@ -18,10 +18,10 @@ jobs:
     container:
       image: "alpine:edge"
     steps:
-      - uses: actions/checkout@v1 # v2 does not work with containers
+      - uses: actions/checkout@v4 # v2 does not work with containers
       - name: "Install build dependencies"
         run: |
-          apk add --no-cache gcc go zstd
+          apk add --no-cache gcc go zstd musl-dev
       - name: "Create and package build tree"
         run: |
           ./build.sh --builddir ~/package-output/ --static build
