@@ -1,5 +1,6 @@
 version: 2
 project_name: maddy
+dist: goreleaser_dist
 
 builds:
   - id: maddy
