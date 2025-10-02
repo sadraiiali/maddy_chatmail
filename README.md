@@ -45,19 +45,15 @@ The easiest way to get started with automatic SSL management is using Docker Com
 First, create a `Caddyfile`:
 
 ```
-yourdomain.com {
-    reverse_proxy maddy-chatmail:8080
-}
-
-mail.yourdomain.com {
-    reverse_proxy maddy-chatmail:8080
+yourdomain.com, mail.yourdomain.com {
+  # Proxy both the main and mail subdomain to the chatmail web endpoint
+  reverse_proxy maddy-chatmail:8080
 }
 ```
 
 Then, create a `docker-compose.yml` file:
 
 ```yaml
-version: '3.8'
 
 services:
   caddy:
@@ -74,11 +70,13 @@ services:
   maddy-chatmail:
     image: ghcr.io/sadraiiali/maddy_chatmail:latest
     environment:
+      # MADDY_HOSTNAME: hostname used for SMTP/IMAP MX and TLS
       - MADDY_HOSTNAME=mail.yourdomain.com
+      # MADDY_DOMAIN: primary domain served by this instance
       - MADDY_DOMAIN=yourdomain.com
     volumes:
       - maddy-data:/data
-      - ./maddy.conf:/data/maddy.conf:ro  # Custom config with chatmail on port 8080
+      - ./maddy.conf:/data/maddy.conf:ro  # put a custom maddy.conf here (chatmail endpoint on port 8080)
     depends_on:
       - caddy
     restart: unless-stopped
@@ -111,6 +109,12 @@ docker-compose up -d
 ```
 
 Caddy will automatically obtain SSL certificates for your domain and proxy requests to Maddy Chatmail.
+
+### Notes
+
+- Make sure DNS A/AAAA records for `yourdomain.com` and `mail.yourdomain.com` point to the server running Caddy.
+- Open ports 80 and 443 on the host so Caddy can perform ACME challenges and serve TLS.
+- The example expects the chatmail HTTP endpoint to listen on port 8080 inside the `maddy-chatmail` container (see the `chatmail` endpoint example below).
 
 For detailed setup instructions including manual installation, TLS certificates, and DNS configuration, see the [Setup Guide](docs/chatmail-setup.md).
 
