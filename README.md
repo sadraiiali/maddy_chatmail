@@ -36,6 +36,84 @@ This demonstrates the complete chatmail experience including:
 - Web interface for account management
 - Full Delta Chat integration
 
+## Quick Start
+
+### Docker Compose with Caddy Reverse Proxy
+
+The easiest way to get started with automatic SSL management is using Docker Compose with Caddy as a reverse proxy. This setup handles SSL certificates automatically and proxies requests to Maddy Chatmail.
+
+First, create a `Caddyfile`:
+
+```
+yourdomain.com {
+    reverse_proxy maddy-chatmail:8080
+}
+
+mail.yourdomain.com {
+    reverse_proxy maddy-chatmail:8080
+}
+```
+
+Then, create a `docker-compose.yml` file:
+
+```yaml
+version: '3.8'
+
+services:
+  caddy:
+    image: caddy:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+
+  maddy-chatmail:
+    image: ghcr.io/sadraiiali/maddy_chatmail:latest
+    environment:
+      - MADDY_HOSTNAME=mail.yourdomain.com
+      - MADDY_DOMAIN=yourdomain.com
+    volumes:
+      - maddy-data:/data
+      - ./maddy.conf:/data/maddy.conf:ro  # Custom config with chatmail on port 8080
+    depends_on:
+      - caddy
+    restart: unless-stopped
+
+volumes:
+  maddy-data:
+  caddy_data:
+  caddy_config:
+```
+
+Create a custom `maddy.conf` based on the setup guide, but change the chatmail endpoints to use port 8080:
+
+```maddy
+# ... (same as setup guide but modify chatmail endpoints)
+
+# Chatmail endpoint for user registration
+chatmail tcp://0.0.0.0:8080 {
+    mail_domain $(primary_domain)
+    mx_domain $(hostname)
+    web_domain $(primary_domain)
+    auth_db local_authdb
+    storage local_mailboxes
+}
+```
+
+Run it with:
+
+```bash
+docker-compose up -d
+```
+
+Caddy will automatically obtain SSL certificates for your domain and proxy requests to Maddy Chatmail.
+
+For detailed setup instructions including manual installation, TLS certificates, and DNS configuration, see the [Setup Guide](docs/chatmail-setup.md).
+
 ## Configuration Differences from Standard Maddy
 
 This chatmail-optimized version includes:

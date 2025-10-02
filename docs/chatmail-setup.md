@@ -13,6 +13,12 @@ Chatmail servers are email servers optimized for secure messaging rather than tr
 
 Chatmail servers work seamlessly with [Delta Chat](https://delta.chat), providing a secure, decentralized messaging experience.
 
+## Live Example
+
+See a working chatmail deployment at: **[inja.bid](https://inja.bid)**
+
+This demonstrates the complete chatmail experience including instant account creation via QR code and full Delta Chat integration.
+
 ## Prerequisites
 
 Before setting up your chatmail server, ensure you have:
@@ -52,6 +58,44 @@ docker cp /path/to/privkey.pem maddy-chatmail:/data/tls/privkey.pem
 # Restart the container
 docker restart maddy-chatmail
 ```
+
+### Docker Compose
+
+Alternatively, you can use Docker Compose for easier management. Create a `docker-compose.yml` file:
+
+```yaml
+version: '3.8'
+
+services:
+  maddy-chatmail:
+    image: ghcr.io/sadraiiali/maddy_chatmail:latest
+    environment:
+      - MADDY_HOSTNAME=mail.yourdomain.com
+      - MADDY_DOMAIN=yourdomain.com
+    volumes:
+      - maddy-data:/data
+      - ./certs:/data/tls:ro  # Mount certificates if available
+    ports:
+      - "25:25"
+      - "143:143"
+      - "465:465"
+      - "587:587"
+      - "993:993"
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+
+volumes:
+  maddy-data:
+```
+
+Then run:
+
+```bash
+docker-compose up -d
+```
+
+If certificates are not mounted, copy them to the container as described above.
 
 ## Manual Installation
 
@@ -462,6 +506,56 @@ Adjust rate limits in the configuration to prevent abuse:
 limits {
     all rate 50 1s  # Allow 50 messages per second
     all concurrency 20  # Allow 20 concurrent connections
+}
+```
+
+### Using Caddy as Reverse Proxy
+
+If you prefer to use Caddy as a reverse proxy in front of Maddy Chatmail, modify the Maddy configuration to use different ports for the chatmail endpoints (e.g., 8080 for HTTP and 8443 for HTTPS), and configure Caddy as follows:
+
+```caddyfile
+yourdomain.com {
+    reverse_proxy localhost:8080
+}
+
+yourdomain.com:443 {
+    tls /etc/caddy/certs/yourdomain.com/fullchain.pem /etc/caddy/certs/yourdomain.com/privkey.pem
+    reverse_proxy localhost:8443
+}
+```
+
+### Using Nginx as Reverse Proxy
+
+Alternatively, you can use Nginx as a reverse proxy. First, change the chatmail endpoints in Maddy to use ports 8080 and 8443, then configure Nginx:
+
+```nginx
+server {
+    listen 80;
+    server_name yourdomain.com;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name yourdomain.com;
+
+    ssl_certificate /etc/nginx/certs/yourdomain.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/certs/yourdomain.com/privkey.pem;
+
+    location / {
+        proxy_pass https://localhost:8443;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
 }
 ```
 
