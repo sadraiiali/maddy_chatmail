@@ -1,3 +1,23 @@
+> # this project moved to [sadraiiali/madmail](https://github.com/sadraiiali/madmail)
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+----
+
 # Maddy Chatmail Server
 > Optimized all-in-one mail server for instant, secure messaging
 
